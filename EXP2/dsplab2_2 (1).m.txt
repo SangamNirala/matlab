@@ -1,0 +1,33 @@
+n=input('enter the n input');
+x_n=input('enter values for x(n)');
+b=input('shifting factor');
+a=input('scaling');
+figure;
+subplot(2,2,1);
+stem(n,x_n);
+axis([min(n)-1 max(n)+1 min(x_n)-1 max(x_n)+1]);
+title('orignal');
+xlabel('frequency');
+ylabel('amplitude');
+
+subplot(2,2,2);
+stem(-n,x_n);
+axis([min(-n)-1 max(-n)+1 min(x_n)-1 max(x_n)+1]);
+title('reversal');
+xlabel('frequency');
+ylabel('amplitude');
+
+subplot(2,2,3);
+stem(n+b,x_n);
+axis([min(n+b)-1 max(n+b)+1 min(x_n)-1 max(x_n)+1]);
+title('shifting');
+xlabel('frequency');
+ylabel('amplitude');
+
+
+subplot(2,2,4);
+stem(n,a*x_n);
+axis([min(n)-1 max(n)+1 min(a*x_n)-1 max(a*x_n)+1]);
+title('scaling');
+xlabel('frequency');
+ylabel('amplitude');

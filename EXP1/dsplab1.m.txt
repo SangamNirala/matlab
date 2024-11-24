@@ -1,0 +1,158 @@
+clc,clearvars,close all;
+
+%impulse
+c=-5:5;
+d=(c==0);
+figure
+subplot(2,5,1)
+plot(c,d)
+title("impulse signal")
+xlabel('time')
+ylabel('amp')
+
+% unit step function
+x=-5:0.01:5;
+y=(x>=0);
+subplot(2,5,2)
+plot(x,y)
+ylim([0,2])
+title("unit step")
+xlabel('time')
+ylabel('amp')
+
+%ramp function
+t=-10:0.01:10;
+r=t .*(t>=0);
+subplot(2,5,3)
+plot(t,r)
+title("ramp signal")
+xlabel('time')
+ylabel('amp')
+
+%parabolic signal
+t=-5:1:5
+y=1*  t.^2;
+subplot(2,5,4)
+plot(t,y)
+title("parabolic signal")
+xlabel('time')
+ylabel('amp')
+
+
+
+%trignometeric fiunction
+a=-4:0.001:4;
+b=sin(a);
+subplot(2,5,5)
+plot(a,b)
+title("sine signal")
+xlabel('time')
+ylabel('amp')
+
+
+%unit impulse
+c=-5:5;
+d=(c==0);
+subplot(2,5,6)
+stem(c,d)
+title("unit impulse")
+xlabel('time')
+ylabel('amp')
+
+
+
+%unit step
+e=-5:5;
+f=(e>=0);
+subplot(2,5,7);
+stem(e,f)
+ylim([0,2])
+title("unit step")
+xlabel('time')
+ylabel('amp')
+
+%discrete ramp
+g=-5:5;
+h=g .*(g>=0);
+subplot(2,5,8);
+stem(g,h)
+title("discrete ramp")
+xlabel('time')
+ylabel('amp')
+
+%discrete parabola
+t=-5:1:5;
+y=1*  t.^2;
+subplot(2,5,9)
+stem(t,y)
+title("parabolic signal")
+xlabel('time')
+ylabel('amp')
+
+%discrete trigo
+i=-5:0.8:5;
+j=sin(i);
+subplot(2,5,10);
+stem(i,j)
+title("discrete sine")
+xlabel('time')
+ylabel('amp')
+
+
+
+
+
+%% section2
+clc; clearvars,close all
+t0=-3:0.001:-2;
+x0=zeros(size(t0));
+
+t1=-2:0.001:-1;
+x1=1.5*ones(size(t1));
+
+t2=-1:0.001:0;
+x2=0.5*t2+2;
+
+t3=0:0.001:1;
+x3=-0.5*t3+2;
+
+t4=1:0.001:2;
+x4=1.5*ones(size(t4));
+
+t5=2:0.001:3;
+x5=zeros(size(t5));
+
+t=[t0 t1 t2 t3 t4 t5];
+x=[x0 x1 x2 x3 x4 x5];
+
+
+plot(t,x)
+xlim([-3 3])
+ylim([-0.5 2.5])
+
+
+
+
+t0=-3:-2.5;
+x0=zeros(size(t0));
+
+t1=-2:-1;
+x1=1.5*ones(size(t1));
+
+t2=-1:0;
+x2=0.5*t2+2;
+
+t3=0:1;
+x3=-0.5*t3+2;
+
+t4=1:2;
+x4=1.5*ones(size(t4));
+
+t5=3:3.5;
+x5=zeros(size(t5));
+
+t=[t0 t1 t2 t3 t4 t5];
+x=[x0 x1 x2 x3 x4 x5];
+stem(t,x)
+xlim([-3 3])
+ylim([-0.5 2.5])
